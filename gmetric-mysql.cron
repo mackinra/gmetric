@@ -1,0 +1,1 @@
+* * * * * ross /usr/bin/python /usr/local/gmetric/bin/gmetric-mysql.py 1>/dev/null 2>&1

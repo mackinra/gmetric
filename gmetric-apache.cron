@@ -1,0 +1,2 @@
+# optional argument is apache port: -p 80
+* * * * * /usr/bin/python /usr/local/gmetric/bin/gmetric-apache.py 1>/dev/null 2>&1 
