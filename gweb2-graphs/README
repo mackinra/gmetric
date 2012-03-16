@@ -1,0 +1,20 @@
+To install just drop these files into your Ganglia graph.d directory.
+
+NOTE: mem_report.php will be replaced (found a small bug in there).
+
+To include the graphs in gweb2, add the graphs you want 
+in /var/lib/ganglia/conf/default.json, like so:
+
+{
+  "included_reports": ["load_report","mem_report","cpu_report","network_report","apache_thr_report"]
+}
+
+This will add the graph to all hosts.  If you want to add host-specific exceptions,
+add a file in /var/lib/ganglia/conf which is named host_HOSTNAME.json (where HOSTNAME 
+is the short hostname known to ganglia) and looks something like this:
+
+{
+   "included_reports": ["mysql_command_report","mysql_select_report","mysql_handler_report","mysql_process_report","mysql_sort_report","mysql_disk_report","mysql_thr_report","mysql_qcache_report","mysql_qcache_block_report","mysql_qcache_mem_report","mysql_tmp_report","mysql_tmp_disk_report"],
+   "excluded_reports": ["apache_thr_report"]
+}
+
